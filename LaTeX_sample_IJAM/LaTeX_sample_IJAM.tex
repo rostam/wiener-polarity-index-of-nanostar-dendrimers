@@ -63,7 +63,7 @@ The Wiener polarity index of a graph $G$, denoted by $W_p (G)$, is defined as th
 
 {\bf Math. Subject Classification:} ...
 
-{\bf wiener polarity index, nanostar dendrimers, topological index} ...
+{\bf Key Words and Phrases:} wiener polarity index, nanostar dendrimers, topological index
 
 \end{abstract}
 
@@ -72,7 +72,7 @@ The Wiener polarity index of a graph $G$, denoted by $W_p (G)$, is defined as th
 Molecular descriptors are playing significant role in chemistry, pharmacology, etc. Among them, topological indices have a prominent place \cite{1}. There are numerous of topological descriptors that have found some applications in theoretical chemistry, especially in QSPR/QSAR research. 
 
 The so-called topological indices have received much attention in recent years, as they provide a strong correlation between a chemical compound's molecular structure and its properties. Some examples include, but not limited to Randic index \cite{2}, degree distance \cite{3}, connective eccentricity index \cite{4}, \cite{5}, Kirchho index \cite{6} , \cite{7}, and Balaban index \cite{8}. One of the oldest and well-studied such indices is the Wiener Index, defined as the sum of distances over all unordered vertex pairs in a graph $G$ \cite{9} and denoted by 
-$$W(G) = \sum_{\{u,b\}\subseteq V(G)} d_G (u,v)$$,
+$$W(G) = \sum_{\{u,b\}\subseteq V(G)} d_G (u,v),$$
 where $d_G (u,v)$ (or simply $d (u,v)$ ) is the distance between $u$ and $v$ in $G$.
 
 Throughout the years the Wiener index has been extensively studied and has become one of the best known (if not the best known) topological indices. In the same paper, another topological index was also introduced by Wiener, called the Wiener polarity index $W_p(G)$, which is defined as the number of unordered pairs of vertices that are at distance $3$ in $G$:
@@ -93,9 +93,19 @@ Dendrimers are highly branched macromolecules. They are being investigated for p
 \begin{figure}
 \label{fig1}
 \centering
-\includegraphics[width=0.7\linewidth]{img1}
+\includegraphics[width=0.6\linewidth]{img1}
 \caption{The molecular graph of $NSB(n)$}
 \end{figure}
+
+
+\begin{figure}
+\label{fig2}
+\centering
+\includegraphics[width=0.5\linewidth]{img2}
+\caption{The number of vertices at distance $3$ from each vertex in a third of $NSB(n)$.}
+\end{figure}
+
+
 
 In the following theorem we compute the Wiener polarity index of $NSB(n)$ for any integer $n\geq 1$.
 \begin{theorem}
@@ -106,14 +116,6 @@ $$
 \end{theorem}
 \begin{proof}
 With respect to Fig. \ref{fig2} and Table \ref{table1}, it can be seen that, we have $9n + 11$ types of vertices based on their distances to length $3$ from each other. There is a vertex of type $1$ such that the number of vertices at distance $3$ from that is $6$. We have $3$ vertices of type $2$ such that the number of vertices at distance $3$ from each of them is $5$. Also there are $6$ vertices of types $3$, $4$ and the number of vertices at distance $3$ from each of them is $4$. The number of vertices of types $5$, $6$ is $3$ and the number of vertices at distance $3$ from each of them is $3$. It continues until we have $3\times 2^n$ vertices of type $9n + 10$ such that the number of vertices at distance $3$ from each of them is $2$. Finally, there are $9\times 2^n$ vertices of type $9n + 11$ such that the number of vertices at distance $3$ from each of them is $2$.
-\end{proof}
-
-\begin{figure}
-\label{fig2}
-\centering
-\includegraphics[width=0.7\linewidth]{img2}
-\caption{The number of vertices at distance $3$ from each vertex in a third of $NSB(n)$.}
-\end{figure}
 
 
 \begin{table}
@@ -139,8 +141,27 @@ With respect to Fig. \ref{fig2} and Table \ref{table1}, it can be seen that, we 
  \hline
 \end{tabular}
 \end{center}
-\caption{ Types of vertices for $NSB(n)$}
+\caption{Types of vertices for $NSB(n)$}
 \end{table}
+
+Thus implies:
+
+\begin{equation}
+\begin{split}
+&W_p(C[n]) = |\{\{u,v\}\subseteq V(G)| d(u,v)=3\} = \\
+& \frac{1}{2}(6\times 1 + 5\times 3 + 4\times 6 + 3\times 3 + 3\times 3 \\
+&+ 2\sum_{k=1}^n 4\times 3\times 2^k + \sum_{k=1}^n (6+5)\times 3\times 2^{k-1} + \sum_{k=1}^n 5\times 3\times 2^{k} \\
+&+ 2\sum_{k=1}^n 4\times 3\times 2^{k+1} + 2\sum_{k=1}^n 3\times 3\times 2^{k} + 4\times 3\times 2^{n+1} + 5\times 3\times 2^{n+1}\\
+&+1\times 3\times 2^n + 2\times 3\times 2^n +2\times 9\times 2^n).
+\end{split}
+\end{equation}
+
+Therefore, 
+$$
+W_p(NSB(n)) = 162\times 2^n - 78.
+$$
+Thus this proof is completed.
+\end{proof}
 
 
 
