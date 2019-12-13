@@ -9,4 +9,4 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          root_file: LaTeX_sample_IJAM/LaTeX_sample_IJAM.tex
+          root_file: LaTeX_sample_IJAM.tex
